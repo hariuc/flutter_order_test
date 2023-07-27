@@ -1,9 +1,10 @@
 part of order_index_entity;
 
 class OrderEntity extends Entity with EquatableMixin {
+  final CustomerEntity customerEntity;
   final List<ItemOrder> items;
 
-  OrderEntity({required this.items});
+  OrderEntity({required this.customerEntity, required this.items});
 
   @override
   bool get stringify => true;
@@ -11,7 +12,7 @@ class OrderEntity extends Entity with EquatableMixin {
   @override
   List<Object?> get props => [items];
 
-  OrderEntity copyWith({List<ItemOrder>? items}) {
-    return OrderEntity(items: items ?? this.items);
+  OrderEntity copyWith({CustomerEntity? customerEntity, List<ItemOrder>? items}) {
+    return OrderEntity(customerEntity: customerEntity ?? this.customerEntity, items: items ?? this.items);
   }
 }
