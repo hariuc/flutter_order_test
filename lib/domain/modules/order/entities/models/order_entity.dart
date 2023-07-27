@@ -10,9 +10,10 @@ class OrderEntity extends Entity with EquatableMixin {
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [items];
+  List<Object?> get props => [customerEntity, items];
 
   OrderEntity copyWith({CustomerEntity? customerEntity, List<ItemOrder>? items}) {
-    return OrderEntity(customerEntity: customerEntity ?? this.customerEntity, items: items ?? this.items);
+    return OrderEntity(
+        customerEntity: customerEntity ?? this.customerEntity, items: items ?? this.items);
   }
 }
