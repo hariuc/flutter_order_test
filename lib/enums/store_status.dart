@@ -1,0 +1,1 @@
+enum StoresStatus { initial, loading, success, failure }

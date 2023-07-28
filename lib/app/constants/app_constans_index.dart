@@ -1,6 +1,7 @@
 library app_constants_index;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_order_test/app/pages/customer_page/customer_page.dart';
 
 part 'resources/color_manager.dart';
 
@@ -19,6 +20,13 @@ part 'resources/app_padding.dart';
 part 'resources/duration_constants.dart';
 
 part 'resources/app_size.dart';
+
+const List<Widget> mainMenuWidgetList = [
+  // GeneralPage(),
+  CustomerPage(),
+  // AssistanseServicesPage(),
+  // ReportMainPage(),
+];
 
 // const String localizationPath = "assets/i18n";
 // const String privacyPolicyPath =
