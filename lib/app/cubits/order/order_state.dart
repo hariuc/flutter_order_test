@@ -1,24 +1,24 @@
 part of 'product_cubit.dart';
 
-class ProductState extends Equatable {
+class OrderState extends Equatable {
   final StoresStatus status;
-  final List<ProductEntity> productList;
+  final List<OrderEntity> orderList;
   final String failureMessage;
 
-  const ProductState(
-      {required this.status, required this.productList, required this.failureMessage});
+  const OrderState(
+      {required this.status, required this.orderList, required this.failureMessage});
 
   @override
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [status, productList, failureMessage];
+  List<Object?> get props => [status, orderList, failureMessage];
 
-  ProductState copyWith(
+  OrderState copyWith(
       {StoresStatus? status, List<ProductEntity>? customerList, String? failureMessage}) {
-    return ProductState(
+    return OrderState(
         status: status ?? this.status,
-        productList: productList ?? this.productList,
+        orderList: orderList ?? this.orderList,
         failureMessage: failureMessage ?? this.failureMessage);
   }
 }

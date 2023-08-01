@@ -8,23 +8,23 @@ class OrderApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // return MultiBlocProvider(
-    //   providers: AppCommonsUtils.getBlocProvidersList(context: context),
-    //   child: MaterialApp(
-    //     home: const MainPage(),
-    //     theme: ThemeData(
-    //       brightness: Brightness.light,
-    //       useMaterial3: true,
-    //     ),
-    //   ),
-    // );
-
-    return MaterialApp(
-      home: const MainPage(),
-      theme: ThemeData(
-        brightness: Brightness.light,
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: AppCommonsUtils.getBlocProvidersList(context: context),
+      child: MaterialApp(
+        home: const MainPage(),
+        theme: ThemeData(
+          brightness: Brightness.light,
+          useMaterial3: true,
+        ),
       ),
     );
+
+    // return MaterialApp(
+    //   home: const MainPage(),
+    //   theme: ThemeData(
+    //     brightness: Brightness.light,
+    //     useMaterial3: true,
+    //   ),
+    // );
   }
 }
