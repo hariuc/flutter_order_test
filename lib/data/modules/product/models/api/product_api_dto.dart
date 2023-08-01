@@ -8,22 +8,20 @@ class ProductApiDto extends ApiDTO with EquatableMixin {
   final String cod;
   @JsonKey(name: 'uuid')
   final String uuid;
-  @JsonKey(name: 'price')
-  final double price;
+ 
 
-  ProductApiDto({required this.name, required this.cod, required this.price, required this.uuid});
+  ProductApiDto({required this.name, required this.cod, required this.uuid});
 
   @override
   bool get stringify => true;
 
   @override
-  List<Object?> get props => [name, cod, price, uuid];
+  List<Object?> get props => [name, cod,  uuid];
 
-  ProductApiDto copyWith({String? name, String? cod, double? price, String? uuid}) {
+  ProductApiDto copyWith({String? name, String? cod,  String? uuid}) {
     return ProductApiDto(
         name: name ?? this.name,
         cod: cod ?? this.cod,
-        price: price ?? this.price,
         uuid: uuid ?? this.uuid);
   }
 

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter_order_test/common/http_utils.dart';
 import 'package:flutter_order_test/data/core/api_rest.dart';
 import 'package:flutter_order_test/data/modules/product/models/product_info_dto.dart';
 
@@ -11,27 +12,13 @@ class ProductApiDataService {
 
   ProductApiDataService(this.httpClient);
 
-  Future<List<ProductApiDto>> getProductList(
-      ) async {
-    // final urlPath = search.trim().isEmpty
-    //     ? "api/v1/get-goods-info/product"
-    //     : "api/v1/get-goods-info/product?search=$search";
-    final urlPath = "";
-    // Map<String, String> headers = {
-    //   "accept": "application/json",
-    //   "content-type": "application/json;charset=UTF-8",
-    //   'charset': 'utf-8',
-    //   'authorization': authorization,
-    // };
-    Map<String, String> headers = {
-      "accept": "application/json",
-    };
+  Future<List<ProductApiDto>> getProductList() async {
+    const urlPath = "http://192.168.0.222/flutter_order_1C/hs/flutter_1c/products";
 
     try {
-      final response =
-      await ApiRest().requestGET(httpClient: httpClient, url: urlPath, headers: headers);
+      final response = await ApiRest()
+          .requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
       if (response.statusCode == 200) {
-
         final List<dynamic> strJSON = json.decode(response.body);
         return strJSON.map((e) => ProductApiDto.fromJson(e)).toList();
       } else {

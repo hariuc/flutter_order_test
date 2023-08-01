@@ -12,7 +12,8 @@ class CustomerApiDataService {
   CustomerApiDataService(this.httpClient);
 
   Future<List<CustomerApiDto>> getCustomersList() async {
-    const urlPath = "http://localhost/flutter_order_1C/hs/flutter_1c/customers";
+    //const urlPath = "http://localhost/flutter_order_1C/hs/flutter_1c/customers";
+    const urlPath = "http://192.168.0.222/flutter_order_1C/hs/flutter_1c/customers";
    
 
     try {

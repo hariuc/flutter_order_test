@@ -5,15 +5,13 @@ import 'package:flutter_order_test/domain/modules/customer/models/customer_info.
 class CustomerCardWidget extends StatelessWidget {
   final CustomerEntity customerEntity;
 
-  const CustomerCardWidget({Key? key, required this.customerEntity})
-      : super(key: key);
+  const CustomerCardWidget({Key? key, required this.customerEntity}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: AppSize.s3,
       child: ListTile(
-        //onTap: callback,
         leading: CircleAvatar(
           backgroundColor: ColorManager.blue400,
           child: Text(
@@ -24,6 +22,18 @@ class CustomerCardWidget extends StatelessWidget {
         title: Text(
           customerEntity.name,
           style: StylesManager(fontSize: FontSize.s16).getRegularStyle(),
+        ),
+        subtitle: Row(
+          children: [
+            const Text("UUID"),
+            const SizedBox(
+              width: 5,
+            ),
+            Text(
+              customerEntity.uuid,
+              style: StylesManager(fontSize: 12).getLightStyle(),
+            )
+          ],
         ),
       ),
     );
