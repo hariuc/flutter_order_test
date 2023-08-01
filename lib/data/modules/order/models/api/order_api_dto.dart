@@ -6,7 +6,7 @@ class OrderApiDto extends ApiDTO with EquatableMixin {
   final String number;
   @JsonKey(name: 'date')
   final DateTime orderDate;
-  @JsonKey(name: 'customer')
+  @JsonKey(name: 'customer_name')
   final String customerName;
   @JsonKey(name: 'status')
   final String status;

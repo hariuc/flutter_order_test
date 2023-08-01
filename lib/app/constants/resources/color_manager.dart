@@ -1,7 +1,6 @@
 part of app_constants_index;
 
 class ColorManager {
-
   ColorManager._();
   static Color white = const Color(0xFFFFFFFF);
   static Color black = const Color(0xFF000000);
@@ -17,7 +16,10 @@ class ColorManager {
   static Color lightBlue300 = const Color(0xFF4FC3F7);
   static Color lightBlue400 = const Color(0xFF29B6F6);
 
+  static Color yellow400 = const Color(0xFFFFEE58);
   static Color yellow700 = const Color(0xFFFBC02D);
 
   static Color blueBackground = const Color(0xFF2196F3);
+
+  static Color green400 = const Color(0xFF66BB6A);
 }

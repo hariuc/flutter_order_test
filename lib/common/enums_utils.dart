@@ -1,7 +1,7 @@
 import 'package:flutter_order_test/enums/order_status_enum.dart';
 
 class EnumsUtils {
-  static OrderStatusEnum stringTuEnum({required String statusStr}) {
+  static OrderStatusEnum stringToEnum({required String statusStr}) {
     if (statusStr == "На согласовании") {
       return OrderStatusEnum.beAgreed;
     } else if (statusStr == "К выполнению / В резерве") {
@@ -11,5 +11,18 @@ class EnumsUtils {
     } else {
       return OrderStatusEnum.close;
     }
+  }
+
+  static String enumToString({required OrderStatusEnum statusEnum}) {
+    if (statusEnum == OrderStatusEnum.beAgreed) {
+      return "На согласовании";
+    } else if (statusEnum == OrderStatusEnum.security) {
+      return "К выполнению / В резерве";
+    } else if (statusEnum == OrderStatusEnum.forShipment) {
+      return "К отгрузке";
+    } else {
+      return "Закрыт";
+    }
+    
   }
 }

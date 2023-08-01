@@ -16,7 +16,7 @@ class BottomNavigationBarWidget extends StatelessWidget {
             currentIndex: stateValue,
             backgroundColor: ColorManager.blue400,
             selectedItemColor: ColorManager.white,
-            unselectedItemColor: ColorManager.blueBackground,
+            unselectedItemColor: ColorManager.black,
             selectedLabelStyle: StylesManager(fontSize: FontSize.s16).getLightStyle(),
             unselectedLabelStyle: StylesManager(fontSize: FontSize.s16).getLightStyle(),
             showUnselectedLabels: true,

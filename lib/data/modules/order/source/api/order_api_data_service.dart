@@ -14,14 +14,14 @@ class OrderApiDataService {
 
   Future<List<OrderApiDto>> getOrderList() async {
     final urlPath = "${HttpUtils.getMainURL()}orders";
-    
 
     try {
-      final response =
-      await ApiRest().requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
+      final response = await ApiRest()
+          .requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
       if (response.statusCode == 200) {
         final List<dynamic> strJSON = json.decode(response.body);
-        return strJSON.map((e) => OrderApiDto.fromJson(e)).toList();
+        final dataDtoList = strJSON.map((e) => OrderApiDto.fromJson(e)).toList();
+        return dataDtoList;
       } else {
         throw const HttpException('HttpException');
       }

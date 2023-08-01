@@ -12,7 +12,7 @@ class OrderMapping {
     return OrderEntity(
         orderDate: input.orderDate,
         customerName: input.customerName,
-        status: EnumsUtils.stringTuEnum(statusStr: input.status),
+        status: EnumsUtils.stringToEnum(statusStr: input.status),
         amount: input.amount,
         number: input.number,
         uuid: input.uuid);

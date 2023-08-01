@@ -5,11 +5,10 @@ Future<void> init() async {
 
   final httpClient = http.Client();
 
-  // //order
-  // dataDi.registerLazySingleton<OrderLocalDataSource>(() => OrderLocalDataSourceImpl());
-  //
-  // dataDi.registerLazySingleton<OrderRepository>(
-  //         () => OrderRepositoryImpl(dataSource: dataDi<OrderLocalDataSource>()));
+ //order
+  dataDi.registerLazySingleton<OrderApiDataSource>(() => OrderApiDataSourceImpl(httpClient: httpClient));
+  dataDi.registerLazySingleton<OrderRepository>(
+          () => OderRepositoryImpl(dataSource: dataDi<OrderApiDataSource>()));
 
   //customer
   dataDi.registerLazySingleton<CustomerApiDataSource>(
