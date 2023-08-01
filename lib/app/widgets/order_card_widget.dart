@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_order_test/app/constants/app_constans_index.dart';
 import 'package:flutter_order_test/common/date_utils.dart';
 import 'package:flutter_order_test/common/enums_utils.dart';
+import 'package:flutter_order_test/common/ui_utils.dart';
 
 import 'package:flutter_order_test/domain/modules/order/entities/order_index.dart';
 
@@ -30,7 +31,12 @@ class OrderCardWidget extends StatelessWidget {
                   width: 5,
                 ),
                 Expanded(
-                  child: Text(EnumsUtils.enumToString(statusEnum: orderEntity.status)),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          color: UIUtils.getStatusColor(statusEnum: orderEntity.status),
+                          borderRadius: const BorderRadius.all(Radius.circular(10))),
+                      padding: const EdgeInsets.only(left: 4),
+                      child: Text(EnumsUtils.enumToString(statusEnum: orderEntity.status))),
                 ),
               ],
             ),
@@ -42,7 +48,16 @@ class OrderCardWidget extends StatelessWidget {
                 const SizedBox(
                   width: 5,
                 ),
-                Expanded(child: Text(orderEntity.amount.toStringAsFixed(2)))
+                Expanded(
+                    child: Row(
+                  children: [
+                    const Text("Сумма:"),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(orderEntity.amount.toStringAsFixed(2))
+                  ],
+                )),
               ],
             ),
             Row(

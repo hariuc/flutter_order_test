@@ -5,6 +5,7 @@ class ColorManager {
   static Color white = const Color(0xFFFFFFFF);
   static Color black = const Color(0xFF000000);
   static Color red = Colors.red;
+  static Color red200 = const Color(0xFFEF9A9A);
 
   static Color blue100 = const Color(0xFFBBDEFB);
   static Color blue200 = const Color(0xFF90CAF9);
@@ -16,10 +17,12 @@ class ColorManager {
   static Color lightBlue300 = const Color(0xFF4FC3F7);
   static Color lightBlue400 = const Color(0xFF29B6F6);
 
+  static Color yellow200 = const Color(0xFFFFF59D);
   static Color yellow400 = const Color(0xFFFFEE58);
   static Color yellow700 = const Color(0xFFFBC02D);
 
   static Color blueBackground = const Color(0xFF2196F3);
 
+  static Color green200 = const Color(0xFFA5D6A7);
   static Color green400 = const Color(0xFF66BB6A);
 }

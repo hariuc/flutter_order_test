@@ -17,7 +17,7 @@ class EnumsUtils {
     if (statusEnum == OrderStatusEnum.beAgreed) {
       return "На согласовании";
     } else if (statusEnum == OrderStatusEnum.security) {
-      return "К выполнению / В резерве";
+      return "К выполнению";
     } else if (statusEnum == OrderStatusEnum.forShipment) {
       return "К отгрузке";
     } else {
