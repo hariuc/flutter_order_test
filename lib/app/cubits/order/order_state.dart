@@ -1,4 +1,4 @@
-part of 'product_cubit.dart';
+part of 'order_cubit.dart';
 
 class OrderState extends Equatable {
   final StoresStatus status;
@@ -15,7 +15,7 @@ class OrderState extends Equatable {
   List<Object?> get props => [status, orderList, failureMessage];
 
   OrderState copyWith(
-      {StoresStatus? status, List<ProductEntity>? customerList, String? failureMessage}) {
+      {StoresStatus? status, List<ProductEntity>? customerList, String? failureMessage, List<OrderEntity>? orderList}) {
     return OrderState(
         status: status ?? this.status,
         orderList: orderList ?? this.orderList,

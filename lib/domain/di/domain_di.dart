@@ -6,8 +6,8 @@ Future<void> init() async {
   //order
   domainDi.registerLazySingleton<LoadOrderUseCase>(
       () => LoadOrderUseCase(repository: domainDi<OrderRepository>()));
-  domainDi.registerLazySingleton<SaveOrderUseCase>(
-      () => SaveOrderUseCase(repository: domainDi<OrderRepository>()));
+  // domainDi.registerLazySingleton<SaveOrderUseCase>(
+  //     () => SaveOrderUseCase(repository: domainDi<OrderRepository>()));
 
   //customer
   domainDi.registerLazySingleton<GetCustomerListUseCase>(

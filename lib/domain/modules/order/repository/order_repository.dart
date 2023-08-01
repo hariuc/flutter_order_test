@@ -4,6 +4,4 @@ abstract class OrderRepository {
 
   Future<List<OrderEntity>> loadOrder();
 
-  Future<void> saveOrder({required OrderEntity orderEntity});
-
 }

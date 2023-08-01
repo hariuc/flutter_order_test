@@ -19,12 +19,5 @@ class OrderApp extends StatelessWidget {
       ),
     );
 
-    // return MaterialApp(
-    //   home: const MainPage(),
-    //   theme: ThemeData(
-    //     brightness: Brightness.light,
-    //     useMaterial3: true,
-    //   ),
-    // );
   }
 }
