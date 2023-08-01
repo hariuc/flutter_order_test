@@ -13,6 +13,8 @@ class OrderMapping {
         orderDate: input.orderDate,
         customerName: input.customerName,
         status: EnumsUtils.stringTuEnum(statusStr: input.status),
-        amount: input.amount);
+        amount: input.amount,
+        number: input.number,
+        uuid: input.uuid);
   }
 }

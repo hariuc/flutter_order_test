@@ -1,1 +1,1 @@
-enum OrderStatusEnum { status1, status2, status3 }
+enum OrderStatusEnum { beAgreed, security, forShipment, close }

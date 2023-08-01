@@ -15,7 +15,7 @@ class ProductState extends Equatable {
   List<Object?> get props => [status, productList, failureMessage];
 
   ProductState copyWith(
-      {StoresStatus? status, List<ProductEntity>? customerList, String? failureMessage}) {
+      {StoresStatus? status, List<ProductEntity>? productList, String? failureMessage}) {
     return ProductState(
         status: status ?? this.status,
         productList: productList ?? this.productList,

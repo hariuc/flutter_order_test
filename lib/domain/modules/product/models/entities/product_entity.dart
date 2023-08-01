@@ -4,9 +4,9 @@ class ProductEntity extends Entity with EquatableMixin {
   final String name;
   final String cod;
   final String uuid;
-  final double price;
+  
 
-  ProductEntity({required this.name, required this.cod, required this.uuid, required this.price});
+  ProductEntity({required this.name, required this.cod, required this.uuid,});
 
   @override
   bool get stringify => true;
@@ -14,11 +14,11 @@ class ProductEntity extends Entity with EquatableMixin {
   @override
   List<Object?> get props => [name, cod, uuid];
 
-  ProductEntity copyWith({String? name, String? cod, String? uuid, double? price}) {
+  ProductEntity copyWith({String? name, String? cod, String? uuid, }) {
     return ProductEntity(
         name: name ?? this.name,
         cod: cod ?? this.cod,
         uuid: uuid ?? this.uuid,
-        price: price ?? this.price);
+        );
   }
 }

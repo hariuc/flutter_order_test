@@ -12,13 +12,11 @@ class CustomerApiDataService {
   CustomerApiDataService(this.httpClient);
 
   Future<List<CustomerApiDto>> getCustomersList() async {
-    //const urlPath = "http://localhost/flutter_order_1C/hs/flutter_1c/customers";
-    const urlPath = "http://192.168.0.222/flutter_order_1C/hs/flutter_1c/customers";
-   
+    final urlPath = "${HttpUtils.getMainURL()}customers";
 
     try {
-      final response =
-      await ApiRest().requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
+      final response = await ApiRest()
+          .requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
       if (response.statusCode == 200) {
         final List<dynamic> strJSON = json.decode(response.body);
         return strJSON.map((e) => CustomerApiDto.fromJson(e)).toList();

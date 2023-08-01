@@ -3,10 +3,10 @@ import 'package:flutter_order_test/domain/modules/product/models/product_info.da
 
 class ProductMapping {
   ProductApiDto mapToDto(ProductEntity input) {
-    return ProductApiDto(name: input.name, cod: input.cod, uuid: input.uuid, price: input.price);
+    return ProductApiDto(name: input.name, cod: input.cod, uuid: input.uuid,);
   }
 
   ProductEntity mapToEntity(ProductApiDto input) {
-    return ProductEntity(name: input.name, cod: input.cod, uuid: input.uuid, price: input.price);
+    return ProductEntity(name: input.name, cod: input.cod, uuid: input.uuid, );
   }
 }

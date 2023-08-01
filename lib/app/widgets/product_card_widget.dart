@@ -28,18 +28,6 @@ class ProductCardWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Text("UUID"),
-                const SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  productEntity.uuid,
-                  style: StylesManager(fontSize: 12).getLightStyle(),
-                )
-              ],
-            ),
-             Row(
-              children: [
                 const Text("name"),
                 const SizedBox(
                   width: 5,
@@ -50,7 +38,7 @@ class ProductCardWidget extends StatelessWidget {
                 )
               ],
             ),
-             Row(
+            Row(
               children: [
                 const Text("code"),
                 const SizedBox(
@@ -58,6 +46,18 @@ class ProductCardWidget extends StatelessWidget {
                 ),
                 Text(
                   productEntity.cod,
+                  style: StylesManager(fontSize: 12).getLightStyle(),
+                )
+              ],
+            ),
+            Row(
+              children: [
+                const Text("UUID"),
+                const SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  productEntity.uuid,
                   style: StylesManager(fontSize: 12).getLightStyle(),
                 )
               ],

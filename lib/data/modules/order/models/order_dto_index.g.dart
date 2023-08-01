@@ -24,16 +24,20 @@ Map<String, dynamic> _$ItemOrderApiDtoToJson(ItemOrderApiDto instance) =>
     };
 
 OrderApiDto _$OrderApiDtoFromJson(Map<String, dynamic> json) => OrderApiDto(
-      orderDate: DateTime.parse(json['order_date'] as String),
+      orderDate: DateTime.parse(json['date'] as String),
       customerName: json['customer'] as String,
       status: json['status'] as String,
       amount: (json['amount'] as num).toDouble(),
+      number: json['number'] as String,
+      uuid: json['uuid'] as String,
     );
 
 Map<String, dynamic> _$OrderApiDtoToJson(OrderApiDto instance) =>
     <String, dynamic>{
-      'order_date': instance.orderDate.toIso8601String(),
+      'number': instance.number,
+      'date': instance.orderDate.toIso8601String(),
       'customer': instance.customerName,
       'status': instance.status,
       'amount': instance.amount,
+      'uuid': instance.uuid,
     };

@@ -13,7 +13,7 @@ class OrderApiDataService {
   OrderApiDataService(this.httpClient);
 
   Future<List<OrderApiDto>> getOrderList() async {
-    const urlPath = "http://localhost/flutter_order_1C/hs/flutter_1c/orders";
+    final urlPath = "${HttpUtils.getMainURL()}orders";
     
 
     try {

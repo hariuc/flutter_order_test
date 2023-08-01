@@ -10,7 +10,6 @@ ProductApiDto _$ProductApiDtoFromJson(Map<String, dynamic> json) =>
     ProductApiDto(
       name: json['name'] as String,
       cod: json['cod'] as String,
-      price: (json['price'] as num).toDouble(),
       uuid: json['uuid'] as String,
     );
 
@@ -19,5 +18,4 @@ Map<String, dynamic> _$ProductApiDtoToJson(ProductApiDto instance) =>
       'name': instance.name,
       'cod': instance.cod,
       'uuid': instance.uuid,
-      'price': instance.price,
     };

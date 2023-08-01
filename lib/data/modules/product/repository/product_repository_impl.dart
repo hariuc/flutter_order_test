@@ -15,8 +15,8 @@ class ProductRepositoryImpl extends ProductRepository {
     try {
       final dataDto = await dataSource.getProductList();
       final mapping = ProductMapping();
-
-      return dataDto.map((e) => mapping.mapToEntity(e)).toList();
+      final data = dataDto.map((e) => mapping.mapToEntity(e)).toList();
+      return data;
     } on http.ClientException catch (e, s) {
       return throw ServerFailure(errorObject: e);
     } catch (e, s) {

@@ -19,10 +19,10 @@ class ProductCubit extends Cubit<ProductState> {
   }) async {
     emit(state.copyWith(status: StoresStatus.loading));
     try {
-      final customerList = await repository.getProductList();
-      callback?.call(true, customerList);
+      final dataList = await repository.getProductList();
+      callback?.call(true, dataList);
       emit(state.copyWith(
-          status: StoresStatus.success, failureMessage: "", customerList: customerList));
+          status: StoresStatus.success, failureMessage: "", productList: dataList));
     } catch (e, s) {
       var failureMessage = e.toString();
       if (e is ServerFailure) {
@@ -33,7 +33,7 @@ class ProductCubit extends Cubit<ProductState> {
 
       callback?.call(false, failureMessage);
       emit(state.copyWith(
-          status: StoresStatus.failure, failureMessage: failureMessage, customerList: []));
+          status: StoresStatus.failure, failureMessage: failureMessage, productList: []));
     }
   }
 }

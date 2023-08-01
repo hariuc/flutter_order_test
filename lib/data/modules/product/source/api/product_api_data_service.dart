@@ -13,14 +13,15 @@ class ProductApiDataService {
   ProductApiDataService(this.httpClient);
 
   Future<List<ProductApiDto>> getProductList() async {
-    const urlPath = "http://192.168.0.222/flutter_order_1C/hs/flutter_1c/products";
+    final urlPath = "${HttpUtils.getMainURL()}products";
 
     try {
       final response = await ApiRest()
           .requestGET(httpClient: httpClient, url: urlPath, headers: HttpUtils.getHeaders());
       if (response.statusCode == 200) {
         final List<dynamic> strJSON = json.decode(response.body);
-        return strJSON.map((e) => ProductApiDto.fromJson(e)).toList();
+        final dataDto = strJSON.map((e) => ProductApiDto.fromJson(e)).toList();
+        return dataDto;
       } else {
         throw const HttpException('HttpException');
       }

@@ -49,8 +49,11 @@ class CustomerResultDataWidget extends StatelessWidget {
         return ListView.builder(
             itemCount: customerList.length,
             itemBuilder: (context, index) {
-              return CustomerCardWidget(
-                customerEntity: customerList[index],
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4),
+                child: CustomerCardWidget(
+                  customerEntity: customerList[index],
+                ),
               );
             });
       }

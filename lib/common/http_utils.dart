@@ -6,4 +6,8 @@ class HttpUtils {
       'charset': 'utf-8',
     };
   }
+
+  static String getMainURL() {
+    return "http://192.168.0.222/flutter_order_1C/hs/flutter_1c/";
+  }
 }
