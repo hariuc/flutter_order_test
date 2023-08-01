@@ -4,9 +4,8 @@ import 'package:flutter_order_test/domain/modules/customer/models/customer_info.
 
 class CustomerCardWidget extends StatelessWidget {
   final CustomerEntity customerEntity;
-  final VoidCallback callback;
 
-  const CustomerCardWidget({Key? key, required this.customerEntity, required this.callback})
+  const CustomerCardWidget({Key? key, required this.customerEntity})
       : super(key: key);
 
   @override
@@ -14,7 +13,7 @@ class CustomerCardWidget extends StatelessWidget {
     return Card(
       elevation: AppSize.s3,
       child: ListTile(
-        onTap: callback,
+        //onTap: callback,
         leading: CircleAvatar(
           backgroundColor: ColorManager.blue400,
           child: Text(
