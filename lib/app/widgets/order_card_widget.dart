@@ -26,7 +26,17 @@ class OrderCardWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                Expanded(child: Text(DateUtils1.formatDate(date: orderEntity.orderDate))),
+                Expanded(
+                    child: Row(
+                  children: [
+                    const Icon(Icons.calendar_month),
+                    const SizedBox(
+                      width: 5,
+                    ),
+                    Text(DateUtils1.formatDate(date: orderEntity.orderDate),
+                        style: StylesManager(fontSize: FontSize.s16).getBoldStyle())
+                  ],
+                )),
                 const SizedBox(
                   width: 5,
                 ),
@@ -36,7 +46,8 @@ class OrderCardWidget extends StatelessWidget {
                           color: UIUtils.getStatusColor(statusEnum: orderEntity.status),
                           borderRadius: const BorderRadius.all(Radius.circular(10))),
                       padding: const EdgeInsets.only(left: 4),
-                      child: Text(EnumsUtils.enumToString(statusEnum: orderEntity.status))),
+                      child: Text(EnumsUtils.enumToString(statusEnum: orderEntity.status),
+                          style: StylesManager(fontSize: FontSize.s16).getBoldStyle())),
                 ),
               ],
             ),

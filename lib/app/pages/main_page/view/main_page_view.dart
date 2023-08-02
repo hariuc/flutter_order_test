@@ -14,8 +14,8 @@ class MainPageView extends StatelessWidget {
         centerTitle: true,
         backgroundColor: ColorManager.blueBackground,
         title: Text(
-          "Flutter & 1C",
-          style: StylesManager(fontSize: FontSize.s18, color: ColorManager.white).getBoldStyle(),
+          "Flutter + 1C",
+          style: StylesManager(fontSize: FontSize.s24, color: ColorManager.white).getBoldStyle(),
         ),
       ),
       bottomNavigationBar: const BottomNavigationBarWidget(),

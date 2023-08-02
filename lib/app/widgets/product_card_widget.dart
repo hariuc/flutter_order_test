@@ -28,25 +28,13 @@ class ProductCardWidget extends StatelessWidget {
           children: [
             Row(
               children: [
-                const Text("name"),
-                const SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  productEntity.name,
-                  style: StylesManager(fontSize: 12).getLightStyle(),
-                )
-              ],
-            ),
-            Row(
-              children: [
-                const Text("code"),
+                const Text("Код:"),
                 const SizedBox(
                   width: 5,
                 ),
                 Text(
                   productEntity.cod,
-                  style: StylesManager(fontSize: 12).getLightStyle(),
+                  style: StylesManager(fontSize: 16).getLightStyle(),
                 )
               ],
             ),

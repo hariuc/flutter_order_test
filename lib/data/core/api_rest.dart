@@ -1,4 +1,4 @@
-import 'package:flutter_order_test/data/constants/api_contstants.dart';
+
 import 'package:http/http.dart' as http;
 
 class ApiRest {
@@ -6,11 +6,8 @@ class ApiRest {
       {required http.Client httpClient,
       required String url,
       required Map<String, String> headers}) async {
-    final baseUrl = await ApiConstants.getMainAPIUrl();
-    final newUrl = baseUrl + url;
-
     try {
-      final response = await httpClient.get(Uri.parse(newUrl), headers: headers);
+      final response = await httpClient.get(Uri.parse(url), headers: headers);
       return response;
     } catch (e, s) {
       throw http.ClientException("Http ClientException");
@@ -22,11 +19,8 @@ class ApiRest {
       required String url,
       required Map<String, String> headers,
       required String body}) async {
-    final baseUrl = await ApiConstants.getMainAPIUrl();
-    final newUrl = baseUrl + url;
-
     try {
-      final response = await httpClient.post(Uri.parse(newUrl), headers: headers, body: body);
+      final response = await httpClient.post(Uri.parse(url), headers: headers, body: body);
       return response;
     } catch (e, s) {
       throw http.ClientException("Http ClientException");
