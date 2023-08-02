@@ -4,6 +4,9 @@ class HttpUtils {
       "accept": "application/json",
       "content-type": "application/json;charset=UTF-8",
       'charset': 'utf-8',
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Referrer-Policy": "no-referrer-when-downgrade",
     };
   }
 

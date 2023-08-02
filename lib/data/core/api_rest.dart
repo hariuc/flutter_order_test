@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,7 @@ class ApiRest {
       final response = await httpClient.get(Uri.parse(url), headers: headers);
       return response;
     } catch (e, s) {
+      log("[ApiRest] $e");
       throw http.ClientException("Http ClientException");
     }
   }
@@ -23,6 +25,7 @@ class ApiRest {
       final response = await httpClient.post(Uri.parse(url), headers: headers, body: body);
       return response;
     } catch (e, s) {
+      log("[ApiRest] $e");
       throw http.ClientException("Http ClientException");
     }
   }
